@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>My Website</title>
+    
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+            rel="stylesheet" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    </head>
+<style>
+    @media (max-width: 768px) {
+        .cea{
+            margin-left: 215px !important;
+        }
+
+
+    }
+
+    body {
+        background-image: url("static/image/gt.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<body> 
+
+    <div class="max-w-screen-xl m-0 sm:m-15  sm:rounded-lg flex justify-center flex-1">
+        <div class="cea" style="margin-left: 300px;">
+            <div>
+                <img class="w-32 mx-auto" />
+            </div>
+            <div class="mt-12 flex flex-col items-center" style="margin-left: -214px;">
+                <h1 class="text-2xl xl:text-3xl font-extrabold" style="color: aliceblue;">
+                    Login
+                </h1>
+                <div class="w-full flex-1 mt-8">
+                    <div class="flex flex-col items-center">
+                        <button
+                            class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                            
+                            <span class="ml-4">
+                                <a style="text-decoration: none;" href="{% url 'signup' %}" >Don't have an Account</a>
+                            </span>
+                        </button>
+
+
+                    </div>
+
+                    <div class="my-12 border-b text-center">
+                        
+                    </div>
+
+                    <div class="mx-auto max-w-xs">
+                        <input
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                            type="email" placeholder="Email" />
+                        <input
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            type="password" placeholder="Password" />
+                        <button
+                            class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                <circle cx="8.5" cy="7" r="4" />
+                                <path d="M20 8v6M23 11h-6" />
+                            </svg>
+                            <a href="{% url 'home' %}" >Login</a>
+
+                        </button>
+                        <p class="mt-6 text-xs text-gray-600 text-center" style="color: rgba(255, 255, 255, 0.779);">
+                            I agree to abide by templatana's
+                            <a href="#" class="border-b border-gray-500 border-dotted">
+                                Terms of Service
+                            </a>
+                            and its
+                            <a href="#" class="border-b border-gray-500 border-dotted">
+                                Privacy Policy
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

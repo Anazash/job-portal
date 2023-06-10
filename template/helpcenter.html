@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <title>My Website</title>
+</head>
+<style>
+    .nav1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        background-color: #333;
+        color: #fff;
+      }
+      
+      .logo img {
+        width: 100px;
+        height: 30px;
+      }
+      
+      .menu-toggle {
+        display: none;
+        color: #fff;
+        cursor: pointer;
+      }
+      
+      .menu {
+        display: flex;
+        align-items: center;
+      }
+      
+      .menu a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 10px;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+        font-size: 17px;
+        font-weight: 600;
+      }
+      
+      .menu a:hover {
+        background-color: #6b6b6b;
+        border-radius: 5px;
+      }
+      
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+      
+        .logo img {
+          width: 100px;
+          height: 30px;
+        }
+      
+        .menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #333;
+          padding: 10px;
+        }
+      
+        .menu a {
+          margin: 5px;
+          padding: 10px;
+          text-align: center;
+        }
+      
+        .menu a:hover {
+          background-color: #6b6b6b;
+          border-radius: 5px;
+        }
+      
+        .menu.active {
+          display: flex;
+        }
+      }
+      
+
+    .notification-page {
+        margin: 70px 10px 0px 300px;
+        padding: 20px;
+        background-color: #f5f5f5;
+        width: 900px;
+    }
+
+    .notification {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        animation: slide-in 0.5s ease;
+    }
+
+    .notification h4 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .notification p {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .notification-date {
+        font-size: 12px;
+        color: #888;
+    }
+
+    @keyframes slide-in {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .search-input {
+        padding: 15px;
+    }
+
+    .search-input input {
+        border: none;
+    outline: none;
+    padding-left: 40px;
+    width: 900px;
+    font-size: 22px;
+    height: 50px;
+    border-radius: 21px
+    }
+
+    .search-input button {
+        background: none;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+    }
+    @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
+      .blink {
+        animation: blink 1s infinite;
+      }
+      @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            font-size: 45px !important;
+        }
+
+        .logo img {
+            width: 25% !important;
+            height: 15% !important;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 34%;
+            left: 0;
+            margin-left: 1074px;
+            width: 276px;
+            background-color: #333;
+        }
+
+        .menu a {
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+            font-size: 35px !important;
+            color: #f5f2f2 !important;
+        }
+
+        .menu a:hover {
+            background-color: #6b6b6b;
+            border-radius: 0;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+
+        .nav1 {
+            width: 1350px !important;
+            height: 220px !important;
+        }
+
+        .footer1 {
+            width: 1350px !important;
+            margin-top: 836px !important;
+        }
+        .fr{
+            width: 1350px !important;
+            height: 351px !important;
+        }
+        .hj{
+            font-size: 52px !important;
+        }
+    }
+
+</style>
+
+<body>
+    <nav class="nav1">
+        <div class="logo">
+            <img src="static/image/logo.png" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'postjobs' %}">Post a job</a>
+            <a href="{% url 'findjobs' %}">Find Jobs</a>
+            <a href="{% url 'products' %}">Products</a>
+            <a href="{% url 'resources' %}">Resources</a>
+            <a href="{% url 'messages' %}">
+                <i class="fa-solid fa-message"></i><span
+                    class="badge rounded-pill badge-notification bg-danger">4</span>
+            </a>
+            <a href="{% url 'helpcenter' %}">
+                Help Center <i class="fas fa-question-circle"></i>
+            </a>
+            <a href="{% url 'profile' %}">
+                Profile&nbsp;<i class="fas fa-user"></i>
+            </a>
+            <a href="{% url 'login' %}">Logout</a>
+        </div>
+    </nav>
+    <div class="fr"
+        style="background-color: #051018; color: #ffffff; text-align: center; padding: 50px; font-size: 40px;">
+        <h4 class="hj">Employer Help Center</h4>
+        <h1 style="margin-top:30px;">How Can We Help You Today?</h1>
+        <div class="search-input">
+            <input type="text" placeholder="I'm looking for...">
+            <button type="submit"><i class="fas fa-search" style="color:rgba(255, 255, 255, 0.445);font-size:30px;"></i></button>
+        </div>
+    </div><br><br><br>
+    <div>
+        <p>
+          <i class="fas fa-question-circle blink" style="font-size: 70px; margin-left: 720px;"></i>
+        </p>
+        <p style="margin-left: 670px; font-size: 20px;">No Content Found...</p>
+      </div>
+      
+    <br><br><br><br>
+    <div class="footer1" style="background-color:#edebeb;; margin-bottom:10px;">
+        <div class="container">
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-dark" style="background-color:  #edebeb;;">
+                <!-- Grid container -->
+                <div class="container p-4 pb-0">
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">
+                                    TOPTAL
+                                </h6>
+                                <p>
+                                    1st Floor,ABCD Plaza, Above uk Bank , Near casual medical center,
+                                    XYZ, America, Uk
+                                    +22565522 +000000000
+                                    overseas@MEDIPOL.com </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <hr class="w-100 d-md-none" />
+
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Place</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-dark">London : 025225452, 88888888</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
+
+                            <hr class="w-100 d-md-none" />
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-home mr-3"></i> New York, NY 10012, US</li>
+                                    <li><i class="fas fa-envelope mr-3"></i> medipol@gmail.com</li>
+                                    <li><i class="fas fa-phone mr-3"></i> + 01 234 567 88</li>
+                                    <li><i class="fas fa-print mr-3"></i> + 01 234 567 89</li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                                <div class="d-flex justify-content-center">
+                                    <!-- Facebook -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;"
+                                        href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                    <!-- Twitter -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"
+                                        href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                                    <!-- Google -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;"
+                                        href="#!" role="button"><i class="fab fa-google"></i></a>
+                                    <!-- Instagram -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;"
+                                        href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="text-center p-3" style="background-color: rgba(133, 133, 133, 0.2)">
+                    &copy; 2020 Interset.com
+                </div>
+            </footer>
+        </div><br>
+    </div>
+
+    <!-- Add the Bootstrap JS link -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+    </script>
+</body>
+</html>

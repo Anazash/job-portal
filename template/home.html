@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <title>My Website</title>
+</head>
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        background-color: #333;
+        color: #fff;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 30px;
+    }
+
+    .menu-toggle {
+        display: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 10px;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .menu a:hover {
+        background-color: #6b6b6b;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            font-size: 45px !important;
+        }
+
+        .logo img {
+            width: 25% !important;
+            height: 15% !important;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 23%;
+            left: 0;
+            margin-left: 736px;
+            width: 242px;
+            background-color: #333;
+        }
+
+        .menu a {
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+            font-size: 28px !important;
+        }
+
+        .menu a:hover {
+            background-color: #6b6b6b;
+            border-radius: 0;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+
+        .nav1 {
+            width: 978px !important;
+            height: 150px !important;
+        }
+
+        .banner {
+            width: 700px !important;
+            margin-left: 110px !important;
+
+        }
+
+        .card-row {
+            display: block !important;
+        }
+
+        .card {
+            width: 500px !important;
+            margin-left: 150px !important;
+        }
+
+        .card-container {
+            display: block !important;
+            margin-left: 51px !important;
+        }
+
+        .hire-button {
+            margin: 20px 0px 0px 400px !important;
+            width: 200px !important;
+            height: 80px !important;
+            font-size: 26px !important;
+        }
+
+        .line1 {
+            margin: 30px 0px 0px 130px !important;
+            text-align: center !important;
+            font-size: 33px !important;
+            width: 700px;
+        }
+
+        .select {
+            margin-left: 190px !important;
+            width: 561px !important;
+            font-size: 26px !important;
+        }
+
+        .heading1 {
+            width: 653px !important;
+            margin-top: -60px !important;
+            margin-left: 150px !important;
+        }
+
+        .card1 {
+            width: 100px !important;
+        }
+
+        .content {
+            font-size: 54px !important;
+        }
+
+        .h7 {
+            width: 791px !important;
+            font-size: 39px !important;
+        }
+
+        .h5 {
+            font-size: 61px !important;
+        }
+
+        .card2 {
+            width: 437px !important;
+            height: 422px !important;
+            margin-left: 296px !important;
+        }
+
+        .card2-container {
+            display: block !important;
+        }
+
+        .footer1 {
+            width: 978px !important;
+        }
+        .description2 {
+            width: 14px !important;
+            height: 143px   !important;
+            background-color: white !important;
+        }
+        .image2 img{
+            margin-left: 500px !important;
+        }
+        .description2 h1{
+            font-size: 18px !important;
+        }
+    }
+
+
+    .banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .left-side {
+        flex: 1;
+        text-align: left;
+        transition: transform 0.3s ease;
+    }
+
+    .left-side h2 {
+        font-size: 65px;
+        margin-left: 100px;
+        margin-bottom: 40px;
+    }
+
+    .hire-button {
+        background-color: #164289;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-left: 100px;
+        width: 170px;
+        height: 53px;
+        font-weight: 600;
+    }
+
+    .hire-button:hover {
+        background-color: #06265b;
+    }
+
+    .right-side {
+        flex: 1;
+        text-align: right;
+        transition: transform 0.3s ease;
+    }
+
+    .right-side img {
+        max-width: 100%;
+    }
+
+    .banner:hover {
+        background-color: #ffffff;
+    }
+
+    .banner:hover .left-side {
+        transform: translateX(-10px);
+    }
+
+    .banner:hover .right-side {
+        transform: translateX(10px);
+    }
+
+    .card-row {
+        display: flex;
+        margin-left: 50px;
+        justify-content: space-between;
+        padding: 20px;
+        margin-right: 50px;
+
+    }
+
+    .card {
+        position: relative;
+        width: 30%;
+        background-color: #ffffff;
+        padding: 50px;
+        border-radius: 7px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.399);
+        transition: transform 0.3s ease;
+        height: 300px;
+
+    }
+
+
+    .card-icon {
+        position: absolute;
+        top: 3px;
+        right: 10px;
+        color: #0d2035;
+        font-size: 30px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card-number {
+        background-color: #e6f2e5;
+        color: #0000007d;
+        font-size: 24px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .card-heading {
+        font-size: 27px;
+        color: #333;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .card-description {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .card1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 50px;
+        width: 45%;
+        max-width: 580px;
+        height: 45%;
+        transition: transform 0.3s;
+    }
+
+    .card1:hover {
+        transform: scale(1.1);
+    }
+
+    .image-section {
+        width: 90%;
+        height: 90%;
+        margin-bottom: 10px;
+    }
+
+    .image-section img {
+        width: 90%;
+
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .content h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .content p {
+        margin-bottom: 10px;
+    }
+
+
+    .heading1 {
+        text-align: center;
+        font-size: 60px;
+        color: #000000;
+        padding: 25px;
+        margin-bottom: 30px;
+        transition: background-color 0.9s ease;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-radius: 2px;
+        position: relative;
+        font-weight: 900;
+    }
+
+    .card2-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .card2 {
+        width: 460px;
+        height: 380px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.497);
+        transition: transform 0.3s ease;
+    }
+
+    .card2:hover {
+        transform: translateY(-10px);
+    }
+
+    .card2-image img {
+        width: 70%;
+        height: 210px;
+        margin-left: 40px;
+    }
+
+    .card2-description {
+        padding: 15px;
+    }
+
+    .card2-description p {
+        margin: 0;
+    }
+
+    .banner2 {
+        display: flex;
+        height: 80%;
+        width: 100%;
+    }
+
+    .description2 {
+        flex: 1;
+        background-color: rgb(13, 45, 94);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+
+
+    .description2 h1 {
+        font-size: 32px;
+        color: #ffffff;
+        justify-content: center;
+        margin-left: 150px;
+    }
+
+    .image2 {
+        flex: 1;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+
+
+    .image2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width:768px) {
+        .banner {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <nav class="nav1">
+        <div class="logo">
+            <img src="static/image/logo.png" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="{% url 'postjobs' %}">Post a job</a>
+            <a href="{% url 'findjobs' %}">Find Jobs</a>
+            <a href="{% url 'products' %}">Products</a>
+            <a href="{% url 'resources' %}">Resources</a>
+            <a href="{% url 'messages' %}">
+                <i class="fa-solid fa-message"></i><span
+                    class="badge rounded-pill badge-notification bg-danger">4</span>
+            </a>
+            <a href="{% url 'helpcenter' %}">
+                Help Center <i class="fas fa-question-circle"></i>
+            </a>
+            <a href="{% url 'profile' %}">
+                Profile&nbsp;<i class="fas fa-user"></i>
+            </a>
+            <a href="{% url 'login' %}">Logout</a>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div class="banner">
+        <div class="left-side">
+            <h2>Let's make your next<br> great hire. Fast.</h2>
+            <button class="hire-button" id="submitBtn">Post a job</button>
+        </div>
+        <div class="right-side">
+            <img src="static/image/hire.png" alt="Image">
+        </div>
+    </div><br><br><br><br><br><br><br>
+
+    <div class="card-row">
+        <div class="card">
+            <div class="card-icon">
+                <i class="fa fa-plus-circle"></i>
+            </div>
+            <div class="card-number">1</div>
+            <h3 class="card-heading">Create your<br> free account</h3>
+            <p class="card-description">All you need is your email address to create an account and start building your
+                job post.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="fa fa-cogs"></i>
+            </div>
+            <div class="card-number">2</div>
+            <h3 class="card-heading">Build your <br>job post</h3>
+            <p class="card-description">Then just add a title, description, and location to your job post, and you're
+                ready to go.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="fa fa-upload"></i>
+            </div>
+            <div class="card-number">3</div>
+            <h3 class="card-heading">Post <br>your job</h3>
+            <p class="card-description">After you post your job, use our state-of-the-art tools to help you find dream
+                talent.</p>
+        </div>
+
+    </div><br><br><br><br><br><br><br><br><br>
+
+    <div style="background-color: rgb(255, 255, 255);">
+        <div class="card-container">
+            <div class="card1">
+                <div class="image-section">
+                    <img src="static/image/f11.png" alt="Service 1">
+                </div>
+                <div class="content">
+                    <h3 class="h5">Get more visibility</h3>
+                    <p class="h7">"Sponsor your job to ensure it gets seen by the right people."</p><br>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="image-section">
+                    <img src="static/image/f2.png" alt="Service 2">
+                </div>
+                <div class="content">
+                    <h3 class="h5">Find quality applicants</h3>
+                    <p class="h7">“List your required skills for the job so relevant candidates apply.”</p><br>
+                </div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card1">
+                <div class="image-section">
+                    <img src="static/image/f3.png" alt="Service 3">
+                </div>
+                <div class="content">
+                    <h3 class="h5">Verify their abilities</h3>
+                    <p class="h7">"Add screener questions and assessments to test applicants’ skills."</p><br>
+                </div>
+            </div>
+            <div class="card1">
+                <div class="image-section">
+                    <img src="static/image/f4.png" alt="Service 4">
+                </div>
+                <div class="content">
+                    <h3 class="h5">Organize your candidates</h3>
+                    <p class="h7">“View and sort resumes, send messages, and schedule interviews—all on Indeed."</p><br>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <button class="hire-button" style="margin-left: 340px;">Get started</button>
+    <div class="line1"
+        style="margin-left: 570px;font-size:20px;margin-top:-60px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+        <p>You control your posts 24/7—edit, add, pause, or close them whenever you want. <br><a
+                href="https://example.com" style="text-decoration: none;"> Learn more about posting.</a></p>
+    </div>
+    <br><br><br><br><br><br><br>
+
+
+    <div id="services" class="heading1">You're in good company.</div>
+    <p class="select" style="text-align: center; font-weight: 500; font-size: 18px; color: #000000;">Over 1,40,000
+        companies use Indeed to hire. See why these<br> amazing companies use us as their platform to hire dream
+        <br>talent.
+    </p>
+    <br><br><br><br>
+
+
+    <div class="card2-container">
+        <div class="card2">
+            <div class="card2-image">
+                <img src="static/image/mc.png" alt="Image 1">
+            </div>
+            <div class="card2-description">
+                <p>Indeed helps the world’s largest family restaurant business to recruit high quality candidates for
+                    its hard-to-fill positions.</p>
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="card2">
+            <div class="card2-image">
+                <img src="static/image/un.png" alt="Image 2">
+            </div>
+            <div class="card2-description">
+                <p>The second oldest university in the world uses Indeed to draw targeted jobseeker traffic to fill both
+                    niche academic positions and corporate support roles.</p>
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="card2">
+            <div class="card2-image">
+                <img src="static/image/mts.png" alt="Image 3">
+            </div>
+            <div class="card2-description">
+                <p>The world leader in mobile communications uses Indeed Sponsored Jobs to lower its cost per applicant
+                    and cost per hire.</p>
+            </div>
+        </div>
+    </div><br><br><br><br>
+
+    <div class="banner2">
+        <div class="description2">
+            <img style="width:50px;height:50px;margin-top:-350px;" src="static/image/ku.png" alt="Image 3">
+            <h1>We have found toptal very<br>helpful in finding the right<br>candidate for our organization...<br>it
+                saves time and energy of both<br>the candidates as well as the<br>recruiter."</h1>
+        </div>
+        <div class="image2">
+            <img src="static/image/ts1.jpg" alt="Image">
+        </div>
+    </div>
+
+
+
+    <br><br><br><br>
+    <div class="footer1" style="background-color:#edebeb;; margin-bottom:10px;">
+        <div class="container">
+            <!-- Footer -->
+            <footer class="text-center text-lg-start text-dark" style="background-color:  #edebeb;;">
+                <!-- Grid container -->
+                <div class="container p-4 pb-0">
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">
+                                    TOPTAL
+                                </h6>
+                                <p>
+                                    1st Floor,ABCD Plaza, Above uk Bank , Near casual medical center,
+                                    XYZ, America, Uk
+                                    +22565522 +000000000
+                                    overseas@MEDIPOL.com </p>
+                            </div>
+                            <!-- Grid column -->
+
+                            <hr class="w-100 d-md-none" />
+
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Place</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-dark">London : 025225452, 88888888</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
+
+                            <hr class="w-100 d-md-none" />
+
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-home mr-3"></i> New York, NY 10012, US</li>
+                                    <li><i class="fas fa-envelope mr-3"></i> medipol@gmail.com</li>
+                                    <li><i class="fas fa-phone mr-3"></i> + 01 234 567 88</li>
+                                    <li><i class="fas fa-print mr-3"></i> + 01 234 567 89</li>
+                                </ul>
+                            </div>
+                            <!-- Grid column -->
+
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                                <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                                <div class="d-flex justify-content-center">
+                                    <!-- Facebook -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;"
+                                        href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                    <!-- Twitter -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;"
+                                        href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                                    <!-- Google -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;"
+                                        href="#!" role="button"><i class="fab fa-google"></i></a>
+                                    <!-- Instagram -->
+                                    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;"
+                                        href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="text-center p-3" style="background-color: rgba(133, 133, 133, 0.2)">
+                    &copy; 2020 Interset.com
+                </div>
+            </footer>
+        </div><br>
+    </div>
+
+    <!-- Add the Bootstrap JS link -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#submitBtn").click(function () {
+                // Show the modal
+                $("#myModal").modal("show");
+
+                // Hide the modal after 3 seconds
+                setTimeout(function () {
+                    $("#myModal").modal("hide");
+                }, 000);
+
+                // Redirect to the home page after 3 seconds
+                setTimeout(function () {
+                    window.location.href = "{% url 'postjobs' %}"; // Replace with the correct URL pattern name
+                }, 000);
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+    </script>
+</body>
+</html>
